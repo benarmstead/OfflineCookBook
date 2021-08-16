@@ -1,2 +1,2 @@
 # SimpleCooking
-Cooking app with simple minimalist recipes
+Cooking app with simple minimalist recipes.
