@@ -33,23 +33,22 @@
 21-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:9:9-54
 22        android:supportsRtl="true"
 22-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:10:9-35
-23        android:testOnly="true"
-24        android:theme="@style/Theme.SimpleCooking" >
-24-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:11:9-51
-25        <activity android:name="com.benarmstead.simplecooking.MainActivity" >
-25-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:12:9-18:20
-25-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:12:19-47
-26            <intent-filter>
-26-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:13:13-17:29
-27                <action android:name="android.intent.action.MAIN" />
-27-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:14:17-69
-27-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:14:25-66
-28
-29                <category android:name="android.intent.category.LAUNCHER" />
-29-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:16:17-77
-29-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:16:27-74
-30            </intent-filter>
-31        </activity>
-32    </application>
-33
-34</manifest>
+23        android:theme="@style/Theme.SimpleCooking" >
+23-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:11:9-51
+24        <activity android:name="com.benarmstead.simplecooking.MainActivity" >
+24-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:12:9-18:20
+24-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:12:19-47
+25            <intent-filter>
+25-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:13:13-17:29
+26                <action android:name="android.intent.action.MAIN" />
+26-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:14:17-69
+26-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:14:25-66
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:16:17-77
+28-->/home/ben/StudioProjects/SimpleCooking/app/src/main/AndroidManifest.xml:16:27-74
+29            </intent-filter>
+30        </activity>
+31    </application>
+32
+33</manifest>
