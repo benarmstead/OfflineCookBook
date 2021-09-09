@@ -1,2 +1,0 @@
-com/benarmstead/simplecooking/BuildConfig.java
- com.benarmstead.simplecooking.BuildConfig
