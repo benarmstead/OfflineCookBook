@@ -18,7 +18,6 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: '11'
-          distribution: 'adopt'
       - name: Run Tests
         run: bash ./gradlew test --stacktrace  
   apk:
@@ -31,7 +30,7 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v1
         with:
-          java-version: 1.8
+          java-version: '11'
       - name: Build APK
         run: bash ./gradlew assembleDebug --stacktrace
       - name: Upload APK
