@@ -1,15 +1,16 @@
-name: Minimal Android CI Workflow
+name: Android CI/CD
 
 on:
   push:
-    branches:
-      - testing
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
     tags:
       - '*'
 
 jobs:
   test:
-    name: Run Unit Tests
+    name: Run Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
