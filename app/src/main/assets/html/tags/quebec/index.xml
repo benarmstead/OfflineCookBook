@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Quebec on Cooking</title>
+    <link>/android_asset/html/tags/quebec/</link>
+    <description>Recent content in Quebec on Cooking</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/android_asset/html/tags/quebec/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pâté Chinois (Quebec Style Shepherd’s Pie)</title>
+      <link>/android_asset/html/posts/pate-chinois/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/android_asset/html/posts/pate-chinois/</guid>
+      <description>This is the most traditional dish that every household eats in Quebec. As a kid, you would eat Pâté Chinois at least once a week, either at home or at the school&amp;rsquo;s cafeteria,. It is very similar to a Shepherd’s Pie, as it is divided in 3 layers of ingredients: meat, legumes and mashed potatoes. The literal translation of the name is something like chinese pie. You can search for the origin of the name on the internet, I&amp;rsquo;m not an history teacher.</description>
+    </item>
+    
+  </channel>
+</rss>
