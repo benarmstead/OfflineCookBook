@@ -1,1 +1,1 @@
-App to allow you to view simple minimalist public domain cooking recipes.
+Cooking app with simple minimalist recipes which does not require an internet connection.
