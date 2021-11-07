@@ -51,7 +51,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: "v${{ steps.get-version.outputs.VERSION }}"
-        release_name: "SimpleCooking"
+        release_name: "OfflineCookBook"
         draft: false
         prerelease: false
 
