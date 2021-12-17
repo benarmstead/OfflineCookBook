@@ -1,2 +1,4 @@
 app/build
 .gradle/
+website/resources/
+websites/public
