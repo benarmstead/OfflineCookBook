@@ -1,0 +1,5 @@
+[en]
+  title = "Simple Cook Book"
+  languageName = "English"
+  weight = 1
+  contentdir = "content/en"

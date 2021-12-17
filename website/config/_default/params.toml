@@ -1,0 +1,30 @@
+logo = true
+logoText = "Simple Cook Book"
+logoType = "short" # long, short
+description = "A cooking website with simple community made recipes."
+
+themeOptions = ["light", "dark"]
+
+useFaviconGenerator = true # https://www.favicon-generator.org/
+
+enableTocSwitch = true
+enableLandingBackground = false
+enableSearch = true
+enableSearchHighlight = true
+enableLangChange = false
+enableDarkMode = true
+enableBreadcrumb = true
+enableBlogBreadcrumb = false
+enableEditBtn = false
+enableToc = false
+enableMenu = true
+enableNavbar = true
+enableFooter = false
+showPoweredBy = false
+
+tocLevels = ["h2", "h3", "h4"]
+paginateWindow = 1
+taxoPaginate = 13
+taxoGroupByDate = "2006" # "2006-01": group by month, "2006": group by year
+
+github = "https://github.com/SimpleCookBook/website"
