@@ -1,4 +1,0 @@
-app/src/main/assets/* linguist-vendored
-*.html linguist-vendored=false
-*.css linguist-vendored=false
-*.js linguist-vendored=false
