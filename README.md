@@ -7,3 +7,9 @@ Cooking app with simple minimalist recipes which does not require an internet co
 ## Screenshots
 
 <img src="https://user-images.githubusercontent.com/70973680/135154110-e8661e1c-fce9-410e-99d7-2060b9261d5d.jpg" width="400"/><a> </a><img src="https://user-images.githubusercontent.com/70973680/135154198-dd24f7ab-3fd0-4d2f-8ebd-66560e5f7854.jpg" width="400"/><a> </a><img src="https://user-images.githubusercontent.com/70973680/135154203-0222f000-2f08-415f-bbf8-798d65b3d06a.jpg" width="400"/><a> </a><img src="https://user-images.githubusercontent.com/70973680/135154210-08521907-a4e5-4f16-917e-1bf92bfba0b1.jpg" width="400"/>
+
+## Community
+
+I have recently created a Signal group for Offline Cook Book, therefore if you wish to make suggestions or generally discuss the direction of the project, you may do so here:
+
+https://signal.group/#CjQKIASLk6H7A7uBNQbRgoPehKmcDImN7o7TFv7CS7uVRarLEhBR5CvRJoKWmFZzA5lm2Oc2
