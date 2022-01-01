@@ -4,8 +4,8 @@ on:
   push:
     tags:
       - '*'
-  branches:
-    - [ flutter_rewrite ]
+    branches:
+      [ flutter_rewrite ]
 
 jobs:
   build:
