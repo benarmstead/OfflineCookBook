@@ -38,8 +38,8 @@ jobs:
         run: |
           echo "${KEYSTORE_BASE64}" | base64 -d > apksign.keystore
           for apk in build/app/outputs/apk/release/*.apk; do
-          ${ANDROID_HOME}/build-tools/30.0.2/apksigner sign --ks apksign.keystore --ks-pass env:KEYSTORE_PASS --out "FuelCost.apk" "${apk}"
-          echo "$(sha256sum FuelCost.apk)"
+          ${ANDROID_HOME}/build-tools/30.0.2/apksigner sign --ks apksign.keystore --ks-pass env:KEYSTORE_PASS --out "OfflineCookBook.apk" "${apk}"
+          echo "$(sha256sum OfflineCookBook.apk)"
           done
           rm apksign.keystore
           
