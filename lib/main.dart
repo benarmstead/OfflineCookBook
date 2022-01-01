@@ -32,13 +32,11 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  //late SearchBar searchBar;
-
-  /*AppBar buildAppBar(BuildContext context) {
-    return AppBar(
-        title: Text('My Home Page'),
-        actions: [searchBar.getSearchAction(context)]);
-  }*/
+  @override
+  void initState() {
+    super.initState();
+    listRecipes();
+  }
 
   List<String> allRecipes = [];
   List<String> allRecipeNames = [];
@@ -58,6 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
       i = i[0].toUpperCase() + i.substring(1);
       allRecipeNames.add(i);
     }
+    setState(() {});
   }
 
   @override
