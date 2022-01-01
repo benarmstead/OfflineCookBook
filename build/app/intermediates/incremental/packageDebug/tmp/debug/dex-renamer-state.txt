@@ -1,4 +1,0 @@
-#Mon Dec 27 12:56:30 GMT 2021
-base.0=/home/ben/offline_cook_book/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
