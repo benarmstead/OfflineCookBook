@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              for (var i = 0; i < allRecipes.length; i++)
+              for (var i = 0; i < allRecipes.length && i < 10; i++)
                 Container(
                   width: width,
                   padding: const EdgeInsets.fromLTRB(15.0, 5.0, 15.0, 5.0),
