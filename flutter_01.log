@@ -1,0 +1,66 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run
+
+## exception
+
+StateError: Bad state: No context with the running Dart application.
+
+```
+#0      RemoteDebuggerExecutionContext.id (package:dwds/src/debugging/execution_context.dart:55:7)
+<asynchronous suspension>
+#1      AppInspector._getExtensionRpcs (package:dwds/src/debugging/inspector.dart:538:20)
+<asynchronous suspension>
+#2      AppInspector._initialize (package:dwds/src/debugging/inspector.dart:97:34)
+<asynchronous suspension>
+#3      AppInspector.initialize (package:dwds/src/debugging/inspector.dart:160:5)
+<asynchronous suspension>
+#4      ChromeProxyService.createIsolate (package:dwds/src/services/chrome_proxy_service.dart:217:18)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 2.8.1, on Debian GNU/Linux 11 (bullseye) 5.10.0-10-amd64,
+    locale en_GB.UTF-8)
+    • Flutter version 2.8.1 at /home/ben/Android/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 77d935af4d (11 days ago), 2021-12-16 08:37:33 -0800
+    • Engine revision 890a5fca2e
+    • Dart version 2.15.1
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 32.0.0)
+    • Android SDK at /home/ben/Android/Sdk
+    • Platform android-32, build-tools 32.0.0
+    • ANDROID_SDK_ROOT = /home/ben/Android/Sdk
+    • Java binary at: /snap/android-studio/115/android-studio/jre/bin/java
+    • Java version OpenJDK Runtime Environment (build 11.0.10+0-b96-7249189)
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web
+    • CHROME_EXECUTABLE = chromium
+
+[✓] Linux toolchain - develop for Linux desktop
+    • Debian clang version 11.0.1-2
+    • cmake version 3.18.4
+    • ninja version 1.10.1
+    • pkg-config version 0.29.2
+
+[✓] Android Studio (version 2020.3)
+    • Android Studio at /snap/android-studio/115/android-studio
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 11.0.10+0-b96-7249189)
+
+[✓] Connected device (2 available)
+    • Linux (desktop) • linux  • linux-x64      • Debian GNU/Linux 11 (bullseye) 5.10.0-10-amd64
+    • Chrome (web)    • chrome • web-javascript • Chromium 95.0.4638.54 Debian GNU/Linux
+
+• No issues found!
+```
