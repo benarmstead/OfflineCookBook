@@ -20,4 +20,4 @@ jobs:
       - uses: bluefireteam/flutter-gh-pages@v7
         with:
           webRenderer: html
-          baseHref: /offlinecookbook/
+          baseHref: /OfflineCookBook/
