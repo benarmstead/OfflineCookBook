@@ -1,55 +1,49 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter/services.dart';
 
-class Recipe extends StatefulWidget {
-  final String filePath;
-  // ignore: use_key_in_widget_constructors
-  const Recipe(this.filePath);
-  @override
-  _Recipe createState() => _Recipe();
-}
-
-class _Recipe extends State<Recipe> {
-  String dataFromFile = "";
+class Recipe {
   String title = "";
+  String body = "";
+  String filePath;
+  List<String> tags = [];
 
-  Future<void> readText() async {
-    final String response = await rootBundle.loadString(widget.filePath);
-    setState(() {
-      dataFromFile = response;
+  Recipe(this.filePath);
 
-      if (kIsWeb) {
-        dataFromFile = dataFromFile.replaceAll(
-            'pix/', '${Uri.base}/assets/recipes/pictures/');
-      } else {
-        dataFromFile =
-            dataFromFile.replaceAll('pix/', 'assets/recipes/pictures/');
-      }
-
-      title = dataFromFile.split('\n')[0];
-      title = title.replaceAll('#', '').replaceAll(' ', '');
-    });
+  void start() {
+    fixImages();
+    setTitle();
+    setTags();
   }
 
-  @override
-  Widget build(BuildContext context) {
-    double padding = 10;
-    double width = 800;
-    double height = 100;
+  Future<void> readText() async {
+    body = await rootBundle.loadString(filePath);
+  }
 
-    readText();
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(title),
-        ),
-        body: Center(
-          child: Container(
-            constraints: BoxConstraints(minWidth: height, maxWidth: width),
-            padding: EdgeInsets.all(padding),
-            child: Markdown(data: dataFromFile),
-          ),
-        ));
+  void fixImages() {
+    if (kIsWeb) {
+      body = body.replaceAll('pix/', '${Uri.base}/assets/recipes/pictures/');
+    } else {
+      body = body.replaceAll('pix/', 'assets/recipes/pictures/');
+    }
+  }
+
+  void setTitle() {
+    title = body.split('\n')[0];
+    title = title.replaceAll('#', '');
+  }
+
+  void setTags() {
+    tags = body.split('\n');
+    tags = tags[tags.length - 1].replaceAll(';tags:', '').split(' ');
+    tags.removeAt(0);
+    print(tags);
+  }
+
+  String getBody() {
+    return body;
+  }
+
+  String getTitle() {
+    return title;
   }
 }

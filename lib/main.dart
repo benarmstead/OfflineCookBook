@@ -1,6 +1,6 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
+import 'package:offline_cook_book/recipe_list.dart';
+import 'package:offline_cook_book/recipe_screen.dart';
 import 'package:offline_cook_book/recipe.dart';
 
 void main() {
@@ -17,52 +17,35 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Offline Cook Book'),
+      home: const HomePage(title: 'Offline Cook Book'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  void initState() {
-    super.initState();
-    listRecipes();
-  }
-
-  List<String> allRecipes = [];
-  List<String> allRecipeNames = [];
+class _HomePageState extends State<HomePage> {
+  List<Recipe> allRecipes = [];
 
   void listRecipes() async {
-    final allAssets =
-        await DefaultAssetBundle.of(context).loadString('AssetManifest.json');
-    final recipesOnly = json
-        .decode(allAssets)
-        .keys
-        .where((String key) => key.startsWith('assets/recipes/markdown/'));
-    for (var i in recipesOnly) {
-      allRecipes.add(i);
-      i = i.split('/');
-      i = i[i.length - 1].replaceAll('-', ' ');
-      i = i.substring(0, i.length - 3);
-      i = i[0].toUpperCase() + i.substring(1);
-      allRecipeNames.add(i);
-    }
-    setState(() {});
+    var recipeExtractor = Data(
+        await DefaultAssetBundle.of(context).loadString('AssetManifest.json'));
+
+    setState(() {
+      allRecipes = recipeExtractor.getRecipes();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     double width = 400;
-
     listRecipes();
 
     return Scaffold(
@@ -74,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              for (var i = 0; i < allRecipes.length && i < 10; i++)
+              for (var i = 0; i < allRecipes.length && i < 5; i++)
                 Container(
                   width: width,
                   padding: const EdgeInsets.fromLTRB(15.0, 5.0, 15.0, 5.0),
@@ -86,10 +69,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Recipe(allRecipes[i])),
+                                builder: (context) =>
+                                    RecipeScreen(allRecipes[i])),
                           );
                         },
-                        child: Text(allRecipeNames[i])),
+                        child: Text(allRecipes[i].getTitle())),
                   ),
                 ),
             ],
