@@ -1,5 +1,7 @@
 # Offline Cook Book
 
+For those who cannot submit PR's, recipes can be added via emailing the recipe to: contact@benarmstead.co.uk
+
 Cooking app with simple minimalist recipes which does not require an internet connection.
 
 [<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" alt="Get it on F-Droid" height="100">](https://benarmstead.github.io/fdroid/repo?fingerprint=9CCBC7C297F0B54520834681D1D29C2184B2CD262E80AA9E453215284ED3D684)
