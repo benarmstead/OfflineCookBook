@@ -36,7 +36,6 @@ class Recipe {
     tags = body.split('\n');
     tags = tags[tags.length - 1].replaceAll(';tags:', '').split(' ');
     tags.removeAt(0);
-    print(tags);
   }
 
   String getBody() {
