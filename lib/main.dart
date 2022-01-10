@@ -37,10 +37,7 @@ class _HomePageState extends State<HomePage> {
   void listRecipes() async {
     var recipeExtractor = Data(
         await DefaultAssetBundle.of(context).loadString('AssetManifest.json'));
-
-    setState(() {
-      allRecipes = recipeExtractor.getRecipes();
-    });
+    allRecipes = recipeExtractor.getRecipes();
   }
 
   @override
