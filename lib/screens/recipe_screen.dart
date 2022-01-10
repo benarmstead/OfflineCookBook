@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:offline_cook_book/recipe.dart';
+import 'package:offline_cook_book/objects/recipe.dart';
 
 class RecipeScreen extends StatefulWidget {
   final Recipe recipe;

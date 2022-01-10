@@ -39,6 +39,9 @@ class Recipe {
   }
 
   String getBody() {
+    if (body.contains('recipes/pictures/')) {
+      return "Cannot display images at the moment";
+    }
     return body;
   }
 
