@@ -33,50 +33,60 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Recipe> allRecipes = [];
+  var loaded = false;
 
-  void listRecipes() async {
-    var recipeExtractor = Data(
-        await DefaultAssetBundle.of(context).loadString('AssetManifest.json'));
-    allRecipes = recipeExtractor.getRecipes();
+  Future<List<Recipe>> listRecipes() async {
+    var assetsPath = 'AssetManifest.json';
+    var allAssets = await DefaultAssetBundle.of(context).loadString(assetsPath);
+    allRecipes = await Data().extractRecipes(allAssets);
+    return allRecipes;
   }
 
-  @override
-  Widget build(BuildContext context) {
-    double width = 400;
-    listRecipes();
+  double width = 400;
 
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: SingleChildScrollView(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              for (var i = 0; i < allRecipes.length && i < 5; i++)
-                Container(
-                  width: width,
-                  padding: const EdgeInsets.fromLTRB(15.0, 5.0, 15.0, 5.0),
-                  alignment: Alignment.center,
-                  child: SizedBox(
-                    width: width,
-                    child: ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    RecipeScreen(allRecipes[i])),
-                          );
-                        },
-                        child: Text(allRecipes[i].getTitle())),
+  @override
+  Widget build(context) {
+    return FutureBuilder<List<Recipe>>(
+        future: listRecipes(),
+        builder: (context, AsyncSnapshot<List<Recipe>> snapshot) {
+          if (snapshot.hasData) {
+            return Scaffold(
+              appBar: AppBar(
+                title: Text(widget.title),
+              ),
+              body: SingleChildScrollView(
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      for (var i = 0; i < allRecipes.length; i++)
+                        Container(
+                          width: width,
+                          padding:
+                              const EdgeInsets.fromLTRB(15.0, 5.0, 15.0, 5.0),
+                          alignment: Alignment.center,
+                          child: SizedBox(
+                            width: width,
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            RecipeScreen(allRecipes[i])),
+                                  );
+                                },
+                                child: Text(allRecipes[i].getTitle())),
+                          ),
+                        ),
+                    ],
                   ),
                 ),
-            ],
-          ),
-        ),
-      ),
-    );
+              ),
+            );
+          } else {
+            return const CircularProgressIndicator();
+          }
+        });
   }
 }

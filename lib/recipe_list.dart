@@ -2,13 +2,9 @@ import 'dart:convert';
 import 'package:offline_cook_book/recipe.dart';
 
 class Data {
-  List<Recipe> allRecipes = [];
+  Future<List<Recipe>> extractRecipes(allAssets) async {
+    List<Recipe> allRecipes = [];
 
-  Data(allAssets) {
-    extractRecipes(allAssets);
-  }
-
-  void extractRecipes(allAssets) async {
     var a = json
         .decode(allAssets)
         .keys
@@ -20,9 +16,7 @@ class Data {
       await recipe.readText();
       recipe.start();
     }
-  }
 
-  List<Recipe> getRecipes() {
     return allRecipes;
   }
 }
