@@ -4,12 +4,14 @@ import 'package:flutter/services.dart';
 class Recipe {
   String title = "";
   String body = "";
+  String imagePath = "";
   String filePath;
   List<String> tags = [];
 
   Recipe(this.filePath);
 
-  void start() {
+  void start() async {
+    await readText();
     fixImages();
     setTitle();
     setTags();

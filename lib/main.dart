@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:offline_cook_book/screens/all_recipes.dart';
 
+import 'objects/data.dart';
+import 'objects/recipe.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -30,6 +33,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<Recipe> allRecipes = [];
+
+  listRecipes() async {
+    var assetsPath = 'AssetManifest.json';
+    var allAssets = await DefaultAssetBundle.of(context).loadString(assetsPath);
+    allRecipes = await Data().extractRecipeData(allAssets);
+    return allRecipes;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    listRecipes();
+  }
+
   @override
   Widget build(context) {
     return Scaffold(
@@ -46,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const AllRecipesScreen()),
+                          builder: (context) => AllRecipesScreen(allRecipes)),
                     );
                   },
                   child: const Text("All Recipes")),

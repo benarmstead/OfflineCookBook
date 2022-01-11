@@ -1,10 +1,11 @@
 import 'dart:convert';
 import 'package:offline_cook_book/objects/recipe.dart';
+import 'package:offline_cook_book/objects/tag.dart';
 
 class Data {
-  Future<List<Recipe>> extractRecipes(allAssets) async {
-    List<Recipe> allRecipes = [];
+  final List<Recipe> allRecipes = [];
 
+  Future<List<Recipe>> extractRecipeData(allAssets) async {
     var markdown = json
         .decode(allAssets)
         .keys
@@ -13,10 +14,11 @@ class Data {
     for (var i in markdown) {
       var recipe = Recipe(i);
       allRecipes.add(recipe);
-      await recipe.readText();
       recipe.start();
     }
 
     return allRecipes;
   }
+
+  //Future<List<Tag>> extractTagsData() async {}
 }
