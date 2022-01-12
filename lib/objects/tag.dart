@@ -11,4 +11,12 @@ class Tag {
       recipes.add(recipe);
     }
   }
+
+  String getName() {
+    return name;
+  }
+
+  List<Recipe> getRecipes() {
+    return recipes;
+  }
 }

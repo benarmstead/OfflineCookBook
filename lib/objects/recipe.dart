@@ -10,11 +10,12 @@ class Recipe {
 
   Recipe(this.filePath);
 
-  void start() async {
+  Future<bool> start() async {
     await readText();
     fixImages();
     setTitle();
     setTags();
+    return true;
   }
 
   Future<void> readText() async {
@@ -32,12 +33,18 @@ class Recipe {
   void setTitle() {
     title = body.split('\n')[0];
     title = title.replaceAll('#', '');
+    title = title.trim();
   }
 
   void setTags() {
     tags = body.split('\n');
-    tags = tags[tags.length - 1].replaceAll(';tags:', '').split(' ');
-    tags.removeAt(0);
+    for (var i in tags) {
+      if (i.contains(';tags:')) {
+        tags = i.replaceAll(';tags:', '').split(' ');
+        tags.removeAt(0);
+        break;
+      }
+    }
   }
 
   String getBody() {
@@ -49,5 +56,9 @@ class Recipe {
 
   String getTitle() {
     return title;
+  }
+
+  List<String> getTags() {
+    return tags;
   }
 }

@@ -2,15 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:offline_cook_book/objects/recipe.dart';
 
-class RecipeScreen extends StatefulWidget {
+class SingleRecipeScreen extends StatefulWidget {
   final Recipe recipe;
   // ignore: use_key_in_widget_constructors
-  const RecipeScreen(this.recipe);
+  const SingleRecipeScreen(this.recipe);
   @override
   _RecipeScreen createState() => _RecipeScreen();
 }
 
-class _RecipeScreen extends State<RecipeScreen> {
+class _RecipeScreen extends State<SingleRecipeScreen> {
   @override
   Widget build(BuildContext context) {
     double padding = 10;

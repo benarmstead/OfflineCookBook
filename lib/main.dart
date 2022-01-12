@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:offline_cook_book/screens/all_recipes.dart';
+import 'package:offline_cook_book/screens/multiple_recipes.dart';
 
 import 'objects/data.dart';
 import 'objects/recipe.dart';
+import 'objects/tag.dart';
+import 'screens/tags_menu.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,18 +36,21 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<Recipe> allRecipes = [];
+  List<Tag> allTags = [];
 
-  listRecipes() async {
+  getRecipesAndTags() async {
     var assetsPath = 'AssetManifest.json';
     var allAssets = await DefaultAssetBundle.of(context).loadString(assetsPath);
-    allRecipes = await Data().extractRecipeData(allAssets);
-    return allRecipes;
+
+    var data = Data(allAssets);
+    allRecipes = data.getAllRecipes();
+    allTags = data.getAllTags();
   }
 
   @override
   void initState() {
     super.initState();
-    listRecipes();
+    getRecipesAndTags();
   }
 
   @override
@@ -64,10 +69,20 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => AllRecipesScreen(allRecipes)),
+                          builder: (context) =>
+                              MultipleRecipesScreen(allRecipes, "All Recipes")),
                     );
                   },
                   child: const Text("All Recipes")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => AllTagsScreen(allTags)),
+                    );
+                  },
+                  child: const Text("All Tags")),
             ]))));
   }
 }
