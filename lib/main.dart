@@ -37,20 +37,18 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<Recipe> allRecipes = [];
   List<Tag> allTags = [];
-
-  getRecipesAndTags() async {
+  late Data data;
+  getData() async {
     var assetsPath = 'AssetManifest.json';
     var allAssets = await DefaultAssetBundle.of(context).loadString(assetsPath);
 
-    var data = Data(allAssets);
-    allRecipes = data.getAllRecipes();
-    allTags = data.getAllTags();
+    data = Data(allAssets);
   }
 
   @override
   void initState() {
     super.initState();
-    getRecipesAndTags();
+    getData();
   }
 
   @override
@@ -69,8 +67,8 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) =>
-                              MultipleRecipesScreen(allRecipes, "All Recipes")),
+                          builder: (context) => MultipleRecipesScreen(
+                              data.getAllRecipes(), "All Recipes")),
                     );
                   },
                   child: const Text("All Recipes")),
@@ -79,7 +77,8 @@ class _HomePageState extends State<HomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => AllTagsScreen(allTags)),
+                          builder: (context) =>
+                              AllTagsScreen(data.getAllTags())),
                     );
                   },
                   child: const Text("All Tags")),
