@@ -11,7 +11,8 @@ import com.facebook.react.shell.MainReactPackage;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-
+// react-native-fs
+import com.rnfs.RNFSPackage;
 
 public class PackageList {
   private Application application;
@@ -56,7 +57,8 @@ public class PackageList {
 
   public ArrayList<ReactPackage> getPackages() {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
-      new MainReactPackage(mConfig)
+      new MainReactPackage(mConfig),
+      new RNFSPackage()
     ));
   }
 }

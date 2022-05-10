@@ -8,6 +8,7 @@ MERGED from /home/ben/OfflineCookBook1/android/app/src/main/AndroidManifest.xml:
 MERGED from [com.facebook.flipper:flipper:0.125.0] /home/ben/.gradle/caches/transforms-3/85fdd9af1f70f27ec9080a3596d5a5c1/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:8:1-18:12
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] /home/ben/.gradle/caches/transforms-3/ee6279daff0e353913f650ca1c1098c1/transformed/jetified-flipper-network-plugin-0.125.0/AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] /home/ben/.gradle/caches/transforms-3/2cade2aff8fbe74525993e45cf63412b/transformed/jetified-flipper-fresco-plugin-0.125.0/AndroidManifest.xml:8:1-15:12
+MERGED from [:react-native-fs] /home/ben/OfflineCookBook1/node_modules/react-native-fs/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.68.2] /home/ben/.gradle/caches/transforms-3/e1c107e7856bf5cdd6dba54e322b105b/transformed/jetified-react-native-0.68.2/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/ben/.gradle/caches/transforms-3/eb5de0732845d4227271d838de9753b6/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [org.webkit:android-jsc:r250230] /home/ben/.gradle/caches/transforms-3/f847d2d73496ec3d012a8ae4db387b4f/transformed/jetified-android-jsc-r250230/AndroidManifest.xml:2:1-11:12
@@ -153,6 +154,8 @@ MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] /home/ben/.gra
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] /home/ben/.gradle/caches/transforms-3/ee6279daff0e353913f650ca1c1098c1/transformed/jetified-flipper-network-plugin-0.125.0/AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] /home/ben/.gradle/caches/transforms-3/2cade2aff8fbe74525993e45cf63412b/transformed/jetified-flipper-fresco-plugin-0.125.0/AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] /home/ben/.gradle/caches/transforms-3/2cade2aff8fbe74525993e45cf63412b/transformed/jetified-flipper-fresco-plugin-0.125.0/AndroidManifest.xml:11:5-13:41
+MERGED from [:react-native-fs] /home/ben/OfflineCookBook1/node_modules/react-native-fs/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-fs] /home/ben/OfflineCookBook1/node_modules/react-native-fs/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.68.2] /home/ben/.gradle/caches/transforms-3/e1c107e7856bf5cdd6dba54e322b105b/transformed/jetified-react-native-0.68.2/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.68.2] /home/ben/.gradle/caches/transforms-3/e1c107e7856bf5cdd6dba54e322b105b/transformed/jetified-react-native-0.68.2/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/ben/.gradle/caches/transforms-3/eb5de0732845d4227271d838de9753b6/transformed/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
@@ -269,3 +272,7 @@ uses-permission#android.permission.ACCESS_WIFI_STATE
 ADDED from [com.facebook.flipper:flipper:0.125.0] /home/ben/.gradle/caches/transforms-3/85fdd9af1f70f27ec9080a3596d5a5c1/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
 	android:name
 		ADDED from [com.facebook.flipper:flipper:0.125.0] /home/ben/.gradle/caches/transforms-3/85fdd9af1f70f27ec9080a3596d5a5c1/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from [:react-native-fs] /home/ben/OfflineCookBook1/node_modules/react-native-fs/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from [:react-native-fs] /home/ben/OfflineCookBook1/node_modules/react-native-fs/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-78
