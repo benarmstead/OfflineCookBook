@@ -1,1 +1,0 @@
-Cooking app with simple minimalist recipes which does not require an internet connection.
