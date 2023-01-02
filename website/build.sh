@@ -1,3 +1,4 @@
+git submodule update --init --recursive
 mkdir -p content/posts static
 cp -r based.cooking/content/* content/posts
 cp -r based.cooking/static/pix static/pix
