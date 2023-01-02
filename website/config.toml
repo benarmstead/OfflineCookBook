@@ -20,7 +20,7 @@ paginate = 100
   [[menu.main]]
     identifier = "about"
     name = "About"
-    url = "/about/"
+    url = "https://github.com/benarmstead/OfflineCookBook#readme"
     weight = 3
 
 [params]
