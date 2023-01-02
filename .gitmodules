@@ -1,0 +1,6 @@
+[submodule "website/themes/m10c"]
+	path = website/themes/m10c
+	url = https://github.com/vaga/hugo-theme-m10c.git
+[submodule "website/based.cooking"]
+	path = website/based.cooking
+	url = https://github.com/LukeSmithxyz/based.cooking.git

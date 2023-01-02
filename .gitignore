@@ -1,4 +1,12 @@
+# Android
 app/build
 .gradle/
 website/resources/
 websites/public
+
+# Hugo
+public/
+resources/*
+.hugo_build.lock
+website/content
+website/static/pix
