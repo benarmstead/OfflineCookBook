@@ -1,7 +1,7 @@
 baseURL = "/"
 title = "Offline Cook Book"
 theme = "m10c"
-paginate = 50
+paginate = 1000
 
 [menu]
   [[menu.main]]
