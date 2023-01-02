@@ -1,12 +1,10 @@
 package com.benarmstead.simplecooking
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.webkit.WebSettings
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import android.content.Intent
 import android.net.Uri
+import android.os.Bundle
+import android.webkit.*
+import androidx.appcompat.app.AppCompatActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -28,9 +26,10 @@ class MainActivity : AppCompatActivity() {
         view.webViewClient = object : WebViewClient() {
             override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
                 if (url?.take(4)  == "file" &&
-                    url?.takeLast(5) != ".html") {
+                    url.takeLast(5) != ".html") {
                     view?.loadUrl(url + "index.html")
                 } else {
+                    view?.loadUrl(homeUrl)
                     val openBrowser = Intent(Intent.ACTION_VIEW)
                     openBrowser.data = Uri.parse(url)
                     startActivity(openBrowser)
