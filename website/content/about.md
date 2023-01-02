@@ -1,1 +1,1 @@
-/home/ben/cook/OfflineCookBook/README.md
+OfflineCookBook/README.md
