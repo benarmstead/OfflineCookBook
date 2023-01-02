@@ -8,5 +8,5 @@ websites/public
 public/
 resources/*
 .hugo_build.lock
-website/content
+website/content/posts
 website/static/pix

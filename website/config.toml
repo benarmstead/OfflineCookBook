@@ -1,7 +1,10 @@
 baseURL = "/"
 title = "Offline Cook Book"
 theme = "m10c"
-paginate = 1000
+paginate = 100
+
+[markup.goldmark.renderer]
+  unsafe = true 
 
 [menu]
   [[menu.main]]
