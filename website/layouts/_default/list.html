@@ -39,18 +39,34 @@
         input[type="submit"]:hover {
             background-color: #4aa874;
         }
+
+        .warning-text {
+            color: red;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-left: 5px;
+            display: none;
+        }
     </style>
     <script>
-        console.log("Here")
-        function finder() {
+        const delay = ms => new Promise(res => setTimeout(res, ms));
+
+        async function finder() {
             let string = document.getElementById('search').value
-            window.find(string);
+            let result = window.find(string);
+            if (!result) {
+                let element = document.getElementById('warning-text');
+                element.style.display = 'block'
+                await delay(5000);
+                element.style.display = 'none'
+            }
         }
     </script>
     <form onsubmit="event.preventDefault();finder()">
         <input placeholder="Search" type="text" id="search">
         <input type="submit" value="Go">
     </form>
+    <p class="warning-text" id="warning-text">Search term not found.</p>
 
     <ul class="posts-list">
         {{ range where .Paginator.Pages "Type" "!=" "page" }}
