@@ -1,0 +1,71 @@
+{{ define "main" }}
+
+<article>
+    <h1>{{ .Title }}</h1>
+
+    <style>
+        /* Style the form */
+        form {
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            margin-top: 20px;
+        }
+
+        /* Style the input */
+        input[type="text"] {
+            border-radius: 20px;
+            border: none;
+            padding: 10px;
+            width: 250px;
+            background-color: rgba(175, 186, 196, .25);
+            color: #fff;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        /* Style the submit button */
+        input[type="submit"] {
+            border-radius: 20px;
+            border: none;
+            padding: 10px 20px;
+            background-color: #57cc8a;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* On hover, change button color */
+        input[type="submit"]:hover {
+            background-color: #4aa874;
+        }
+    </style>
+    <script>
+        console.log("Here")
+        function finder() {
+            let string = document.getElementById('search').value
+            window.find(string);
+        }
+    </script>
+    <form onsubmit="event.preventDefault();finder()">
+        <input placeholder="Search" type="text" id="search">
+        <input type="submit" value="Go">
+    </form>
+
+    <ul class="posts-list">
+        {{ range where .Paginator.Pages "Type" "!=" "page" }}
+        <li class="posts-list-item">
+            <a class="posts-list-item-title" href="{{ .Permalink }}">{{ .Title }}</a>
+            <span class="posts-list-item-description">
+                {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
+                {{ .PublishDate.Format "Jan 2, 2006" }}
+                <span class="posts-list-item-separator">-</span>
+                {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
+                {{ .ReadingTime }} min read
+            </span>
+        </li>
+        {{ end }}
+    </ul>
+    {{ partial "pagination.html" $ }}
+</article>
+{{ end }}
