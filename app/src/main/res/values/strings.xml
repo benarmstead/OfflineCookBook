@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CookBook</string>
+    <string name="no_app_to_open_link">No app available to open this link</string>
 </resources>

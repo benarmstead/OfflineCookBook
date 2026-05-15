@@ -1,9 +1,11 @@
 package com.benarmstead.simplecooking
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.webkit.*
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -32,7 +34,15 @@ class MainActivity : AppCompatActivity() {
                     view?.loadUrl(homeUrl)
                     val openBrowser = Intent(Intent.ACTION_VIEW)
                     openBrowser.data = Uri.parse(url)
-                    startActivity(openBrowser)
+                    try {
+                        startActivity(openBrowser)
+                    } catch (e: ActivityNotFoundException) {
+                        Toast.makeText(
+                            this@MainActivity,
+                            R.string.no_app_to_open_link,
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 }
                 return false
             }
